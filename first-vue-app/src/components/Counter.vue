@@ -7,7 +7,7 @@
 
     <h3>child:{{ counter }}</h3>
 
-    <h3>vuex: {{ $store.state.doubledata }}</h3>
+    <h3>vuex: {{ pdata }}</h3>
     <button @click="vuexadd">+</button>
     <br>
     <button @click="vuexsub">-</button>
@@ -20,6 +20,11 @@ export default {
   data() {
     return {
       counter:0
+    }
+  },
+  computed: {
+    pdata() {
+      return this.$store.getters.getdata
     }
   },
   methods: {
